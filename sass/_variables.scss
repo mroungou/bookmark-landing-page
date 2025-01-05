@@ -1,0 +1,12 @@
+@use 'colors' as c;
+
+@mixin buttons {
+    color: c.$white;
+    font-size: .875rem;
+    line-height: 28px;
+    letter-spacing: .25px;
+    outline: none;
+    border: none;
+    background-color: c.$softBlue;
+    border-radius: 5px;
+}

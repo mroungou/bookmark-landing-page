@@ -1,0 +1,376 @@
+@use 'colors' as c;
+@use 'fonts';
+@use 'variables' as v;
+
+body {
+    font-family: "Rubik", serif;
+}
+
+header {
+    display: flex;
+    padding: 2rem;
+
+    .menu-options {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        #close-menu {
+            display: none;
+        }
+    }
+}
+
+.overlay {
+    display: none;
+}
+
+.hero {
+    padding: 0 2rem;
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.875rem;
+        font-weight: 500;
+        color: c.$veryDarkBlue;
+        line-height: 40px;
+        text-align: center;
+        letter-spacing: -0.09px;
+    }
+
+    p {
+        font-size: .938rem;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+        color: c.$grayishBlue;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    font-size: .875rem;
+    line-height: 28px;
+    letter-spacing: .25px;
+    font-weight: 600;
+    margin-top: 2rem;
+
+    button {
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        height: 48px;
+    }
+
+    .chrome {
+        width: 151px;
+        color: c.$white;
+        background: c.$softBlue;
+    }
+
+    .firefox {
+        width: 146px;
+        background: rgba(247, 247, 247, 1);
+        color: c.$veryDarkBlue;
+        box-shadow: 0 8px 8px -4px rgba(73, 93, 207, 0.2001);
+    }
+}
+
+.features {
+    margin-top: 7.4rem;
+    text-align: center;
+    padding: 0 2rem;
+
+    h2 {
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 52px;
+        letter-spacing: -.08px;
+        color: c.$veryDarkBlue;
+        margin: 0;
+    }
+
+    p {
+        font-size: .938rem;
+        color: c.$grayishBlue;
+        line-height: 25px;
+        opacity: 75%;
+        margin: 0;
+    }
+
+    nav {
+        margin-top: 2.5rem;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            font-size: 1rem;
+            line-height: 17px;
+            letter-spacing: .53px;
+            color: c.$veryDarkBlue;
+            border-top: 1px solid c.$grayishBlue;
+            border-bottom: 1px solid c.$grayishBlue;
+            
+            
+            li {
+                padding: 1.275rem 0;
+                opacity: 75%;
+            }
+            li:not(:last-child) {
+                border-bottom: 1px solid c.$grayishBlue;
+            }
+        }
+    }
+    
+
+    .advantage-div {
+        margin-top: 4rem;
+        
+        img {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: c.$veryDarkBlue;
+            letter-spacing: -.08px;
+            margin: 0;
+            line-height: 52px;
+        }
+
+        /* styles for the info button */
+        .info {
+            @include v.buttons;
+            height: 48px;
+            width: 114px;
+            margin: 1rem 0 0;
+        }
+    }
+}
+
+.download {
+    margin-top: 5rem;
+    padding: 0 3rem;
+    text-align: center;
+
+    h2 {
+        margin: 0;
+        line-height: 52px;
+        font-size: 1.5rem;
+        color: c.$veryDarkBlue;
+        letter-spacing: -.08px;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: .938rem;
+        color: c.$grayishBlue;
+        line-height: 25px;
+        opacity: 75%;
+        margin: 0;
+    }
+
+    .browsers {
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    .browser {
+        background: url('../../images/bg-dots.svg');
+        background-repeat: no-repeat;
+        background-position: center 70%;
+        box-shadow: 0 10px 20px -5px rgba(73, 93, 207, 0.2001);
+        padding: 3.5rem 1.5rem 2rem;
+        border-radius: 15px;
+    }
+
+    .text {
+        margin: 2rem 0 4rem;
+    }
+
+    span.add {
+        display: block;
+        letter-spacing: .25px;
+        margin-bottom: .375rem;
+        color: c.$veryDarkBlue;
+    }
+
+    span.version {
+        opacity: 50%;
+        color: c.$veryDarkBlue;
+        font-size: .938rem;
+    }
+
+    button.install {
+        @include v.buttons;
+        height: 48px;
+        width: 100%;
+    }
+}
+
+.faq-section {
+    padding: 0 2rem;
+    text-align: center;
+    h3 {
+        font-size: 1.5rem;
+        letter-spacing: -.08px;
+        font-weight: 600;
+        color: c.$veryDarkBlue;
+        line-height: 30px;
+    }
+
+    p {
+        font-size: .938rem;
+        line-height: 25px;
+        opacity: 50%;
+        color: c.$veryDarkBlue;
+    }
+
+    .info { 
+        height: 48px;
+        width: 114px;
+        margin-top: 3rem;
+        @include v.buttons;
+    }
+}
+
+// stylels for the faqs
+
+.faqs {
+    text-align: left;
+
+    .accordion {
+        outline: none;
+        border: none;
+        background: none;
+        border-bottom: 1px solid rgba(36, 42, 69, .1477);
+        line-height: 32px;
+        font-size: .938rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: .835rem 0;
+    }
+
+    .panel {
+        max-height: 0;
+        transition: max-height 0.5s ease-in-out;
+        overflow: hidden;
+        margin: 0;
+    }
+}
+
+.contact {
+    margin-top: 7.4rem;
+    background: c.$softBlue;
+    padding: 3.75rem 2rem;
+    color: c.$white;
+    text-align: center;
+
+    p {
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: 4.62px;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 40px;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 28px;
+        font-weight: 600;
+        letter-spacing: -.08px;
+    }
+
+    form {
+        margin-top: 2rem;
+    }
+
+    input {
+        font-size: .875rem;
+        line-height: 28px;
+        letter-spacing: .25px;
+        padding: .625rem;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        color: c.$veryDarkBlue;
+
+        &::placeholder {
+            color: rgba(36, 42, 69, 0.2501);
+        }
+    }
+
+    .contact-btn {
+        margin-top: 1rem;
+        width: 100%;
+        border: none;
+        outline: none;
+        background: c.$softRed;
+        color: c.$white;
+        border-radius: 5px;
+        height: 48px;
+    }
+}
+
+footer {
+    text-align: center;
+    color: c.$white;
+    background: c.$veryDarkBlue;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    padding: 2.5rem 0;
+
+    nav {
+        ul {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            list-style: none;
+            padding: 0;
+            font-weight: 200;
+            margin: 0;
+        }
+
+        a, a:visited {
+            color: c.$white;
+            text-transform: uppercase;
+            font-size: .938rem;
+            line-height: 17px;
+            letter-spacing: 1.73px;
+            text-decoration: none;
+        }
+    }
+
+    .socials {
+        display: flex;
+        column-gap: 2rem;
+        align-items: center;
+    }
+}
+
+
+/* styles for the nav menu in the features section when clicked */
+.active {
+   text-decoration: underline;
+   text-underline-offset: 1.25rem;
+   text-decoration-color: c.$softRed;
+   text-decoration-thickness: 4px;
+   opacity: 100% !important;
+}
