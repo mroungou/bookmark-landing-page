@@ -10,38 +10,34 @@ header {
     display: flex;
     padding: 1.5rem 2rem;
 
-    .logo img {
-    }
-
     .menu-options {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         width: 100%;
-        z-index: 2;
-
-        #close-menu {
-            display: none;
-        }
+        // z-index: 2;
     }
 }
 
 .overlay {
     display: flex;
-    max-height: 0;
+    // max-height: 0;
     overflow: hidden;
     flex-direction: column;
     text-align: center;
     position: absolute;
-    top: 7.5%;
+    top: 0;
     left: 0%;
     width: 100%;
     background: c.$veryDarkBlue;
-    opacity: .9;
+    opacity: 0;
     box-sizing: border-box;
     z-index: 1;
+    transition: .5s max-height ease-in-out;
+    transition: .5s opacity ease-in-out;
     
     nav {
-        padding: 3rem 2rem;
+        padding: 1.5rem 2rem;
     }
 
     ul {
@@ -69,6 +65,13 @@ header {
         font-size: 1.25rem;
         letter-spacing: 2.31px;
         text-decoration: none;
+    }
+
+    .overlay-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 4rem;
     }
 
     .login-btn {
@@ -124,14 +127,9 @@ header {
 
     // blue pattern
     .pattern {
-        height: 203px;
-        width: 577px;
-        background: c.$softBlue;
-        border-radius: 316.5px;
-        position: absolute;
+        @include v.pattern;
         top: 22.5%;
         left: 20%;
-        z-index: -1;
     }
 
     .hero-text {
@@ -234,6 +232,20 @@ header {
             line-height: 52px;
         }
 
+        .advantage-img {
+            position: relative;
+        }
+
+        .pattern {
+            @include v.pattern;
+            right: 15%;
+            top: 18%;
+        }
+
+        .text {
+            margin-top: 3.5rem;
+        }
+
         /* styles for the info button */
         .info {
             @include v.buttons;
@@ -243,6 +255,7 @@ header {
         }
     }
 }
+
 
 .download {
     margin-top: 5rem;
@@ -351,9 +364,13 @@ header {
         padding: .835rem 0;
     }
 
+    img {
+        transition: .3s transform ease-out;
+    }
+
     .panel {
         max-height: 0;
-        transition: max-height 0.5s ease-in-out;
+        transition: max-height 0.3s ease-in-out;
         overflow: hidden;
         margin: 0;
     }
@@ -454,6 +471,14 @@ footer {
     }
 }
 
+/* active faq */
+.active-faq {
+    img {
+        transform: rotate(180deg);
+        filter: brightness(0) saturate(100%) invert(40%) sepia(33%) saturate(2627%) hue-rotate(329deg) brightness(116%) contrast(96%);
+    }
+}
+
 
 /* styles for the nav menu in the features section when clicked */
 .active {
@@ -462,4 +487,5 @@ footer {
    text-decoration-color: c.$softRed;
    text-decoration-thickness: 4px;
    opacity: 100% !important;
+   transition: .5s text-decoration ease-out;
 }

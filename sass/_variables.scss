@@ -10,3 +10,12 @@
     background-color: c.$softBlue;
     border-radius: 5px;
 }
+
+@mixin pattern {
+    height: 203px;
+    width: 577px;
+    background: c.$softBlue;
+    border-radius: 316.5px;
+    position: absolute;
+    z-index: -1;
+}
