@@ -370,7 +370,7 @@ header {
 
     .panel {
         max-height: 0;
-        transition: max-height 0.3s ease-in-out;
+        transition: max-height 0.5s ease-in-out;
         overflow: hidden;
         margin: 0;
     }
@@ -418,6 +418,20 @@ header {
 
         &::placeholder {
             color: rgba(36, 42, 69, 0.2501);
+        }
+    }
+
+    .input-div {
+        display: grid;
+        // making them overlap
+        img, input {
+            grid-area: 1/-1;
+        }
+
+        img {
+            opacity: 0;
+            transition: .2s opacity ease-in;
+            margin: auto 1rem auto auto;
         }
     }
 
@@ -488,4 +502,28 @@ footer {
    text-decoration-thickness: 4px;
    opacity: 100% !important;
    transition: .5s text-decoration ease-out;
+}
+
+/* styles for the error div */
+
+.has-error {
+    input {
+        border: 4px solid c.$softRed;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    img {
+        opacity: 1;
+    }
+}
+
+.error-div {
+    text-align: left;
+    background: c.$softRed;
+    color: c.$white;
+    letter-spacing: .25px;
+    font-size: .625rem;
+    font-style: italic;
+    padding: .625rem;
+    border-radius: 0px 0px 5px 5px;
 }

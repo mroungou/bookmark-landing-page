@@ -1,3 +1,36 @@
+/* form handling */
+const validationMessage = {
+    'empty': 'Please enter an email address',
+    'invalid': 'Whoops, make sure it’s an email'
+}
+
+const validateEmail = email => {
+    const regex = /[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/gm
+
+    if (!regex.test(email.value)) {
+        hasError(email, validationMessage.invalid)
+    } else if (email.value === '') {
+        hasError(email, validationMessage.empty)
+    } else {
+        hasNoError(email)
+    }
+}
+
+/* error functions */
+
+const hasError = (element, message) => {
+    const errorDiv = document.querySelector('.error-div')
+    errorDiv.textContent = ''
+    errorDiv.textContent = message
+    element.parentElement.classList.add('has-error')
+}
+
+const hasNoError = element => {
+    const errorDiv = document.querySelector('.error-div')
+    errorDiv.textContent = ''
+    element.parentElement.classList.remove('has-error')
+}
+
 /* handling of the mobile menu */
 const openMenu = () => {
     const mobileOverlay = document.getElementById('overlay')
@@ -33,3 +66,11 @@ const toggleFAQ = (event) => {
 document.querySelectorAll('.accordion').forEach(faq => faq.addEventListener('click', toggleFAQ))
 // adding event listener to the hambuger menu and close menu
 document.querySelectorAll('.menu').forEach(btn => btn.addEventListener('click', openMenu))
+// handling the form
+
+document.getElementById('form').addEventListener('submit', (e) => {
+    const emailInput = document.getElementById('email')
+
+    e.preventDefault()
+    validateEmail(emailInput)
+})
