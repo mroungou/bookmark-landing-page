@@ -19,16 +19,30 @@ const validateEmail = email => {
 /* error functions */
 
 const hasError = (element, message) => {
-    const errorDiv = document.querySelector('.error-div')
-    errorDiv.textContent = ''
-    errorDiv.textContent = message
-    element.parentElement.classList.add('has-error')
+
+    const parentElement = element.parentElement
+
+    if (!parentElement.querySelector('.error-div')) {
+        const errorDiv = document.createElement('div')
+        errorDiv.className = 'error-div'
+        errorDiv.innerText = message
+        parentElement.classList.add('has-error')
+        
+        parentElement.append(errorDiv)
+    }
+
+    parentElement.classList.add('has-error')
 }
 
 const hasNoError = element => {
-    const errorDiv = document.querySelector('.error-div')
-    errorDiv.textContent = ''
-    element.parentElement.classList.remove('has-error')
+
+    const parentElement = element.parentElement
+    const errorDiv = parentElement.querySelector('.error-div')
+
+    if (errorDiv) {
+        parentElement.classList.remove('.has-error')
+        errorDiv.remove()
+    }
 }
 
 /* handling of the mobile menu */
