@@ -430,6 +430,7 @@ header .menu-options {
   color: rgb(255, 255, 255);
   border-radius: 5px;
   height: 48px;
+  box-sizing: border-box;
 }
 
 footer {
@@ -506,6 +507,10 @@ footer .socials {
   .overlay a, .overlay a:visited {
     color: rgb(36, 42, 69);
   }
+  .overlay a:hover, .overlay a:visited:hover {
+    cursor: pointer;
+    color: rgb(250, 89, 89);
+  }
   .overlay .login-btn {
     background: rgb(250, 89, 89);
     border: 2px solid rgb(250, 89, 89);
@@ -514,6 +519,13 @@ footer .socials {
   }
   .overlay .login-btn a, .overlay .login-btn a:visited {
     color: rgb(255, 255, 255);
+    font-weight: 500;
+  }
+  .overlay .login-btn:hover {
+    background: none;
+  }
+  .overlay .login-btn:hover a, .overlay .login-btn:hover a:visited {
+    color: rgb(250, 89, 89);
   }
   .hero {
     display: flex;
@@ -547,9 +559,25 @@ footer .socials {
     justify-content: flex-start;
     -moz-column-gap: 1rem;
          column-gap: 1rem;
+    /* hover styles for hero btns */
+  }
+  .buttons .chrome:hover {
+    cursor: pointer;
+    background: none;
+    border: 2px solid rgb(82, 103, 223);
+    color: rgb(82, 103, 223);
+  }
+  .buttons .firefox:hover {
+    cursor: pointer;
+    background: none;
+    border: 2px solid rgb(36, 42, 69);
+    color: rgb(36, 42, 69);
   }
   .features {
     padding: 0 10.5rem;
+    display: flex;
+    flex-direction: column;
+    /* text at the beginning of the features div with h2 and p */
   }
   .features h2 {
     font-size: 2rem;
@@ -573,6 +601,158 @@ footer .socials {
     width: 730px;
     border-top: none;
   }
+  .features nav ul li:not(:last-child) {
+    border-bottom: none;
+  }
+  .features nav ul li:hover {
+    cursor: pointer;
+    color: rgb(250, 89, 89);
+  }
+  .features .text {
+    width: 49%;
+    align-self: center;
+  }
+  .features .advantage-div {
+    display: flex;
+    -moz-column-gap: 7.813rem;
+         column-gap: 7.813rem;
+    text-align: left;
+  }
+  .features .advantage-div h3 {
+    font-size: 2rem;
+    line-height: 52px;
+    letter-spacing: -0.1px;
+    margin-bottom: 1.5rem;
+  }
+  .features .advantage-div .pattern {
+    top: 20%;
+  }
+  .features .advantage-div .text {
+    width: 40%;
+    align-self: center;
+    margin-top: 0;
+  }
+  .features .advantage-div .info {
+    margin: 1.5rem 0 0;
+  }
+  .download {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12.4rem;
+    padding: 0 16.5rem;
+    /* text that contains the h2 and p  */
+  }
+  .download h2 {
+    font-size: 2rem;
+    line-height: 52px;
+    letter-spacing: -0.1px;
+    margin-bottom: 1rem;
+  }
+  .download p {
+    line-height: 28px;
+    font-size: 1.125rem;
+  }
+  .download .text-main {
+    width: 60%;
+    align-self: center;
+  }
+  .download .browsers {
+    flex-direction: row;
+    justify-content: space-between;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    height: 451px;
+  }
+  .download .browser {
+    height: 371px;
+    width: 280px;
+    box-sizing: border-box;
+  }
+  .download .firefox {
+    align-self: center;
+  }
+  .download .opera {
+    align-self: self-end;
+  }
+  .download button.install:hover {
+    cursor: pointer;
+    background: none;
+    border: 2px solid rgb(82, 103, 223);
+    color: rgb(82, 103, 223);
+    font-weight: 500;
+  }
+  .faq-section {
+    padding: 0 28rem;
+    margin-top: 7.4rem;
+  }
+  .faq-section h3 {
+    font-size: 2rem;
+    line-height: 52px;
+    letter-spacing: -0.1px;
+    margin-bottom: 1rem;
+  }
+  .faq-section p {
+    font-size: 1.125rem;
+    line-height: 28px;
+  }
+  .faq-section button:hover {
+    color: rgb(250, 89, 89);
+    cursor: pointer;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+  }
+  .contact h3 {
+    font-size: 2rem;
+    letter-spacing: -0.1px;
+    line-height: 40px;
+  }
+  .contact .text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 35%;
+  }
+  .contact form {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    width: 50%;
+  }
+  .contact input {
+    width: 300px;
+  }
+  .contact .contact-btn {
+    width: 126px;
+    margin-top: 0;
+  }
+  footer {
+    flex-direction: row;
+    padding: 1.835rem 10.5rem;
+    -moz-column-gap: 6rem;
+         column-gap: 6rem;
+  }
+  footer nav ul {
+    flex-direction: row;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+  footer nav ul a:hover {
+    cursor: pointer;
+    color: rgb(250, 89, 89);
+  }
+  footer .socials {
+    margin-left: auto;
+  }
+  footer .socials *:hover {
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(56%) sepia(45%) saturate(4235%) hue-rotate(324deg) brightness(96%) contrast(104%);
+  }
 }
 /* active faq */
 .active-faq img {
@@ -582,14 +762,25 @@ footer .socials {
 
 /* styles for the nav menu in the features section when clicked */
 .active {
-  text-decoration: underline;
-  text-underline-offset: 1.25rem;
-  text-decoration-color: rgb(250, 89, 89);
-  text-decoration-thickness: 4px;
   opacity: 100% !important;
-  transition: 0.5s -webkit-text-decoration ease-out;
-  transition: 0.5s text-decoration ease-out;
-  transition: 0.5s text-decoration ease-out, 0.5s -webkit-text-decoration ease-out;
+  position: relative;
+}
+.active::after {
+  content: "";
+  display: block;
+  width: 45%; /* Adjust width to the desired size */
+  height: 4px; /* Border thickness */
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background: rgb(250, 89, 89);
+  transition: 5s background ease-in-out;
+}
+@media screen and (min-width: 1440px) {
+  .active::after {
+    width: 140%;
+  }
 }
 
 /* styles for the error div */
